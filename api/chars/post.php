@@ -5,7 +5,7 @@
   $char = json_decode( $inputJSON );
 
   if (isset($char->name) && isset($char->name[0]) &&
-    isset($char->head) && isset($char->gender)) {
+    isset($char->race) && isset($char->stats)) {
 
     $db = json_decode( file_get_contents( $storage.'/chars.json' ) );
 
@@ -17,7 +17,6 @@
     }
 
     if ($found === false) {
-      $char->active = true;
       $char->id = $db->settings->nextID;
       $db->settings->nextID = $db->settings->nextID + 1;
 
@@ -32,6 +31,6 @@
   } else {
     http_response_code(406);
     if (!isset($char->name) || !(isset($char->name[0]))) array_push($messages, 'Name is required!');
-    if (!isset($char->head)) array_push($messages, 'Head is required!');
-    if (!isset($char->gender)) array_push($messages, 'Gender is required!');
+    if (!isset($char->race)) array_push($messages, 'Race is required!');
+    if (!isset($char->stats)) array_push($messages, 'Stats are required!');
   };

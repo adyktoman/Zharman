@@ -9,11 +9,21 @@
   $uri = explode('/', $_SERVER['REQUEST_URI']);
   $method = strtolower($_SERVER['REQUEST_METHOD']);
   $controller = "./api/$uri[1]/$method.php";
+  $generalController= "./api/general/$method.php";
+
   $messages = [];
   $storage = getcwd().'/db';
 
   if(file_exists($controller)) {
     include($controller);
+  } elseif(file_exists($generalController)) {
+    $entityDB = "$storage/$uri[1].json";
+
+    if(!file_exists($entityDB)) {
+      file_put_contents($entityDB, '{"data": [], "settings": {"nextID": 1}}');
+    }
+
+    include($generalController);
   } else {
     http_response_code(404);
     array_push($messages, "Controller file not found: [$controller]");
