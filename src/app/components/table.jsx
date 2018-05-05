@@ -1,4 +1,4 @@
-const Table = ({ cols, data, footer, loading, renderEmpty, renderLoading }) => (
+const Table = ({ cols, data, footer, loading }) => (
   <table class="table table-sm table-hover">
     <thead>
       <tr class="bg-dark text-white">
@@ -25,7 +25,8 @@ const Table = ({ cols, data, footer, loading, renderEmpty, renderLoading }) => (
         loading === false && data && data.length == 0 && (
           <tr class="text-center">
             <td colspan={ cols.length + 1 } class="py-5">
-              { renderEmpty() }
+              <i class="mark-icon text-warning">⚠</i>
+              <p>No chars found!</p>
             </td>
           </tr>
         )
@@ -34,7 +35,8 @@ const Table = ({ cols, data, footer, loading, renderEmpty, renderLoading }) => (
         loading === true && (
           <tr class="text-center">
             <td colspan={ cols.length + 1 } class="py-5">
-              { renderLoading() }
+              <i class="mark-icon spin text-primary">◌</i>
+              <p>Loading... please wait...</p>
             </td>
           </tr>
         )

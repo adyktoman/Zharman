@@ -9,6 +9,7 @@ const RACES = [ 'Archer', 'Knight', 'Mage' ];
 export default class CharsList extends Component {
   constructor(props) {
     super(props);
+    
     this.columns = [
       { label: 'Name', content: this.renderNameColumn.bind(this) },
       { label: 'HP', content: (char) => char.stats.hp },
@@ -28,24 +29,6 @@ export default class CharsList extends Component {
     )
   }
 
-  renderLoading() {
-    return (
-      <div>
-        <i class="mark-icon spin text-primary">◌</i>
-        <p>Loading... please wait...</p>
-      </div>
-    )
-  }
-
-  renderEmpty() {
-    return (
-      <div>
-        <i class="mark-icon text-warning">⚠</i>
-        <p>No chars found!</p>
-      </div>
-    )
-  }
-
   renderNameColumn(char) {
     return (
       <span
@@ -62,11 +45,7 @@ export default class CharsList extends Component {
         cols={ this.columns }
         data={ store.list }
         footer={ `Total: ${ store.list.length }` }
-        loading={ store.loading }
-        renderLoading={ this.renderLoading }
-        renderEmpty={ this.renderEmpty }
-        >
-      </Table>
+        loading={ store.loading } />
     );
   }
 }
