@@ -1,6 +1,11 @@
+// Shared Components
+import Header from '../../components/header';
+
 const UsersPage = () => (
-  <section>
-    <h1>Users Page</h1>
+  <section class="container-fluid">
+    <Header title="Users Manager" description="Grant access to this app.">
+      <button class="btn btn-primary btn-sm">➕ Add</button>
+    </Header>
   </section>
 );
 
