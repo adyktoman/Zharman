@@ -21,6 +21,7 @@
         "plugin:react/recommended"
     ],
     "rules": {
+      "quotes": ["error", "single"],
       "react/react-in-jsx-scope": "off",
       "react/jsx-key": "off",
       "react/no-unknown-property": "off",

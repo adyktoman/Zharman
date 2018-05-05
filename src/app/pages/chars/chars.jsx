@@ -16,10 +16,15 @@ export default class CharPage extends Component {
     super(props);
   }
 
-  onCreate(e) {
+  onSave(e) {
     e.preventDefault();
 
-    store.save();
+    if (store.new.id) {
+      store.update();
+    } else {
+      store.save();
+    }
+
     store.reset();
 
     $('#charEditorModal').modal('hide');
@@ -39,8 +44,7 @@ export default class CharPage extends Component {
           </nav>
           <p class="text-muted">Here you can add, remove, edit and compare your chars.</p>
           <CharsList />
-          <CharEditorModal
-            onCreate={ this.onCreate.bind(this) } />
+          <CharEditorModal onSave={ this.onSave.bind(this) } />
         </section>
       </Provider>
     );

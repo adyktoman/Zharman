@@ -17,9 +17,6 @@ const CharsStore = model('CharsStore', {
     }
   }),
   actions: state => ({
-    save() {
-      state.list.push(state.new);
-    },
     reset() {
       state.new = {
         name: 'Unnamed',
@@ -36,6 +33,22 @@ const CharsStore = model('CharsStore', {
     },
     remove(char) {
       state.list = state.list.filter(current => current.name !== char.name)
+    },
+    save() {
+      state.list.push(state.new);
+    },
+    update() {
+      state.list.map(char => {
+        if (char.name === state.new.name ) {
+          char = state.new;
+        }
+      });
+    },
+    select(char) {
+      state.new.name = char.name;
+      state.new.id = 1;
+      state.new.stats = char.stats;
+      state.new.points = char.points;
     },
     setName (name) {
       state.new.name = name;

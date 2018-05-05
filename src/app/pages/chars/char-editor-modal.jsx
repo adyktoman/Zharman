@@ -5,7 +5,7 @@ import Modal from '../../components/modal';
 
 @connect
 export default class CharEditorModal extends Component {
-  render ({ store, onChange, onCreate }) {
+  render ({ store, onSave }) {
     return (
       <Modal id="charEditorModal" title="Add a new char">
         <div class="modal-body">
@@ -49,8 +49,14 @@ export default class CharEditorModal extends Component {
           </form>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary" onClick={ onCreate } disabled={ store.new.points !== 20 } >Save changes</button>
+          <button
+            type="button" class="btn btn-secondary"
+            data-dismiss="modal">Close</button>
+          <button
+            type="button" class="btn btn-primary" onClick={ onSave }
+            disabled={ store.new.points !== 20 }>
+            { store.new.id? 'Update': 'Save' }
+        </button>
         </div>
       </Modal>
     );

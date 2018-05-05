@@ -23,7 +23,13 @@ export default class CharsList extends Component {
           {
             store.list && store.list.map( char => (
               <tr>
-                <td>{ char.name } ({ RACES[char.race] })</td>
+                <td
+                  class="btn text-primary"
+                  data-toggle="modal"
+                  data-target="#charEditorModal"
+                  onClick={ () => { store.select(char) } }
+                  >
+                  { char.name } ({ RACES[char.race] })</td>
                 <td>{ char.stats.hp }</td>
                 <td>{ char.stats.sp }</td>
                 <td>{ char.stats.str }</td>
