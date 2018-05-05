@@ -1,0 +1,12 @@
+---
+  menu:
+    title:
+      url: /
+      label: ⚓ CharMan
+    top:
+      - url: /battle
+        label: Battle
+      - url: /chars
+        label: Chars
+      - url: /users
+        label: Users

@@ -1,0 +1,38 @@
+{
+  "private": true,
+  "name": "charman",
+  "version": "0.0.0",
+  "license": "MIT",
+  "scripts": {
+    "api": "php -S localhost:9002 api/index.php",
+    "start": "if-env NODE_ENV=production && npm run -s serve || npm run -s dev",
+    "build": "preact build",
+    "serve": "preact build && preact serve",
+    "dev": "preact watch",
+    "lint": "eslint src"
+  },
+  "eslintConfig": {
+    "extends": "eslint-config-synacor"
+  },
+  "eslintIgnore": [
+    "build/*"
+  ],
+  "devDependencies": {
+    "babel-eslint": "^8.2.3",
+    "eslint": "^4.5.0",
+    "eslint-config-synacor": "^1.1.0",
+    "if-env": "^1.0.0",
+    "preact-cli": "^2.0.0"
+  },
+  "dependencies": {
+    "bootstrap": "4.1.1",
+    "jquery": "^3.3.1",
+    "parket": "^0.4.2",
+    "popper.js": "^1.14.3",
+    "preact": "^8.2.1",
+    "preact-compat": "^3.17.0",
+    "stylus": "^0.54.5",
+    "stylus-loader": "^3.0.2",
+    "yaml-loader": "^0.5.0"
+  }
+}

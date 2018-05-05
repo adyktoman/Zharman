@@ -1,0 +1,29 @@
+{
+    "plugins": [
+        "react"
+    ],
+    parser: 'babel-eslint',
+    "parserOptions": {
+        "ecmaVersion": 7,
+        "sourceType": "module",
+        "ecmaFeatures": {
+            "jsx": true,
+            "experimentalObjectRestSpread": true
+        }
+    },
+    "env": {
+        "es6":     true,
+        "browser": true,
+        "node":    true
+    },
+    "extends": [
+        "eslint:recommended",
+        "plugin:react/recommended"
+    ],
+    "rules": {
+      "react/react-in-jsx-scope": "off",
+      "react/jsx-key": "off",
+      "react/no-unknown-property": "off",
+      "react/prop-types": "off"
+    }
+}
