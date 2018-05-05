@@ -1,6 +1,8 @@
 import axios from 'axios';
 import model from 'parket';
 
+const API_URI = process.env.PREACT_APP_API + '/chars';
+
 const CharsStore = model('CharsStore', {
   initial: () => ({
     list: [],
@@ -22,7 +24,7 @@ const CharsStore = model('CharsStore', {
     load() {
       state.loading = true;
       axios
-        .get('http://localhost:9002/chars')
+        .get(API_URI)
         .then(res => {
           state.list = res.data;
           state.loading = false;
@@ -45,15 +47,15 @@ const CharsStore = model('CharsStore', {
     remove(char) {
       state.loading = true;
       axios
-        .delete('http://localhost:9002/chars/' + char.id)
-        .then(res => {
+        .delete(API_URI + '/' + char.id)
+        .then(() => {
             state.load();
-        })
+        });
     },
     save() {
       state.loading = true;
       axios
-        .post('http://localhost:9002/chars', state.new)
+        .post(API_URI, state.new)
         .then(() => {
           state.load()
         });
@@ -61,7 +63,7 @@ const CharsStore = model('CharsStore', {
     update() {
       state.loading = true;
       axios
-        .put('http://localhost:9002/chars/' + state.new.id, state.new)
+        .put(API_URI + '/' + state.new.id, state.new)
         .then(() => {
           state.load()
         });

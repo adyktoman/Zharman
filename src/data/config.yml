@@ -2,7 +2,7 @@
   menu:
     title:
       url: /
-      label: ⚓ CharMan
+      label: ⚓ Zharman
     top:
       - url: /battle
         label: Battle

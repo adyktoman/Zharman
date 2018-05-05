@@ -1,6 +1,6 @@
 {
   "private": true,
-  "name": "charman",
+  "name": "zharman",
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
@@ -31,6 +31,7 @@
     "parket": "^0.4.2",
     "popper.js": "^1.14.3",
     "preact": "^8.2.1",
+    "preact-cli-plugin-env-vars": "^1.2.0",
     "preact-compat": "^3.17.0",
     "stylus": "^0.54.5",
     "stylus-loader": "^3.0.2",

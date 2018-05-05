@@ -1,6 +1,46 @@
 {
-    "chars": [],
+    "chars": [
+        {
+            "name": "Magic Mike",
+            "points": 20,
+            "race": 2,
+            "stats": {
+                "hp": 2,
+                "sp": 6,
+                "str": 2,
+                "def": 2,
+                "int": 8
+            },
+            "id": 10
+        },
+        {
+            "name": "The Rock",
+            "points": 20,
+            "race": 1,
+            "stats": {
+                "hp": 6,
+                "sp": 1,
+                "str": 8,
+                "def": 4,
+                "int": 1
+            },
+            "id": 11
+        },
+        {
+            "name": "Robin Hood",
+            "points": 20,
+            "race": 0,
+            "stats": {
+                "hp": 1,
+                "sp": 1,
+                "str": 2,
+                "def": 14,
+                "int": 2
+            },
+            "id": 12
+        }
+    ],
     "settings": {
-        "nextID": 10
+        "nextID": 19
     }
 }
