@@ -30,6 +30,10 @@ export default class CharPage extends Component {
     $('#charEditorModal').modal('hide');
   }
 
+  componentDidMount() {
+    store.load();
+  }
+
   render() {
     return (
       <Provider store={ store }>

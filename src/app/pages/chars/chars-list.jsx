@@ -21,7 +21,7 @@ export default class CharsList extends Component {
         </thead>
         <tbody>
           {
-            store.list && store.list.map( char => (
+            store.loading === false && store.list && store.list.map( char => (
               <tr>
                 <td
                   class="btn text-primary"
@@ -44,14 +44,24 @@ export default class CharsList extends Component {
             ))
           }
           {
-            store.list && store.list.length == 0 && (
+            store.loading === false && store.list && store.list.length == 0 && (
               <tr class="text-center">
-                <td colspan="7" class="p-5">
-                  <h1 class="text-warning">⚠</h1>
-                  No chars found!
+                <td colspan="7" class="py-5">
+                  <i class="mark-icon text-warning">⚠</i>
+                  <p>No chars found!</p>
                 </td>
               </tr>
             )
+         }
+         {
+           store.loading === true && (
+             <tr class="text-center">
+               <td colspan="7" class="py-5">
+                 <i class="mark-icon spin text-primary">◌</i>
+                 <p>Loading... please wait...</p>
+               </td>
+             </tr>
+           )
          }
         </tbody>
         <tfoot class="bg-light text-right">

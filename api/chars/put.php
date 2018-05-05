@@ -21,17 +21,7 @@
       foreach ($db->chars as $index => $char) {
           if ($char->id === $charID) {
             $found = true;
-            if (isset($updatedChar->name) ) {
-              $db->chars[$index]->name = $updatedChar->name;
-            }
-
-            if (isset($updatedChar->head) ) {
-              $db->chars[$index]->head = $updatedChar->head;
-            }
-
-            if (isset($updatedChar->gender) ) {
-              $db->chars[$index]->gender = $updatedChar->gender;
-            }
+            $db->chars[$index] = $updatedChar;
           }
       }
 

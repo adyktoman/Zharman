@@ -1,3 +1,4 @@
+import axios from 'axios';
 import model from 'parket';
 
 const CharsStore = model('CharsStore', {
@@ -14,9 +15,19 @@ const CharsStore = model('CharsStore', {
         def: 4,
         int: 4
       }
-    }
+    },
+    loading: true
   }),
   actions: state => ({
+    load() {
+      state.loading = true;
+      axios
+        .get('http://localhost:9002/chars')
+        .then(res => {
+          state.list = res.data;
+          state.loading = false;
+        })
+    },
     reset() {
       state.new = {
         name: 'Unnamed',
@@ -32,21 +43,32 @@ const CharsStore = model('CharsStore', {
       }
     },
     remove(char) {
-      state.list = state.list.filter(current => current.name !== char.name)
+      state.loading = true;
+      axios
+        .delete('http://localhost:9002/chars/' + char.id)
+        .then(res => {
+            state.load();
+        })
     },
     save() {
-      state.list.push(state.new);
+      state.loading = true;
+      axios
+        .post('http://localhost:9002/chars', state.new)
+        .then(() => {
+          state.load()
+        });
     },
     update() {
-      state.list.map(char => {
-        if (char.name === state.new.name ) {
-          char = state.new;
-        }
-      });
+      state.loading = true;
+      axios
+        .put('http://localhost:9002/chars/' + state.new.id, state.new)
+        .then(() => {
+          state.load()
+        });
     },
     select(char) {
       state.new.name = char.name;
-      state.new.id = 1;
+      state.new.id = char.id;
       state.new.stats = char.stats;
       state.new.points = char.points;
     },

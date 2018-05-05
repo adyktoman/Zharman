@@ -1,6 +1,33 @@
 {
-    "chars": [],
+    "chars": [
+        {
+            "name": "Unnamed123",
+            "points": 20,
+            "race": 0,
+            "stats": {
+                "hp": 4,
+                "sp": 4,
+                "str": 4,
+                "def": 4,
+                "int": 4
+            },
+            "id": 5
+        },
+        {
+            "name": "Unnamed6",
+            "points": 20,
+            "race": 2,
+            "stats": {
+                "hp": 5,
+                "sp": 4,
+                "str": 3,
+                "def": 2,
+                "int": 6
+            },
+            "id": 6
+        }
+    ],
     "settings": {
-        "nextID": 2
+        "nextID": 8
     }
 }
