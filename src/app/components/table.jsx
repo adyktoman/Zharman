@@ -37,7 +37,7 @@ const Table = ({ cols, data, footer, loading }) => (
         loading === true && (
           <tr class="text-center">
             <td colspan={ cols.length + 1 } class="py-5">
-              <Icon className="text-primary icon-spin" figure="spinner" size="lg" />
+              <Icon className="text-muted icon-spin" figure="spinner" size="lg" />
               <p>Loading... please wait...</p>
             </td>
           </tr>

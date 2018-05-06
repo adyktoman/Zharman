@@ -1,4 +1,14 @@
+const Icon = ({ className, figure, size }) => (
+  <i class={ `mark-icon icon-${size} ${className}` }>
+    <span class={ className }>{ ICONS[figure] }</span></i>
+);
+
 const ICONS = {
+  // TODO: Add these icons
+  // 🕒🝎👁👽🐦🐕🐈🎭🏷𐄹⛑❌⬠➹✨♀♂❄❆
+  // ⛽✆☑☒☎🏭🏝☄☖☗🏛🏞🏙☔🏘🏗🏔🏋🏄🎧🎞🎟🎖
+  // 🎓🍽🐵👁💣💰💳💻💹📚🕊🕴🕷🕸🖼🗑🗓🗝🗡🗨🗺
+  // 🚍🚔🚘🚭🚲🚹🚺👪🚼🛋🛎🛍🛠🛡🛢🛤🛳
   anchor: '⚓',
   atom: '⚛',
   ballot: '྾',
@@ -6,10 +16,6 @@ const ICONS = {
   biohazard: '☣',
   boat: '⛵',
   check: '✓',
-  chevronDown: '⏷',
-  chevronLeft: '⏴',
-  chevronRight: '⏵',
-  chevronUp: '⏶',
   chili: '🌶',
   chore: '⚙',
   church: '⛪',
@@ -30,9 +36,9 @@ const ICONS = {
   hearth: '❤',
   helm: '⎈',
   hexagon: '⎔',
+  home: '🏠',
   hourglass: '⌛',
   hourglass2: '⏳',
-  house: '🏠',
   inbox: '📥',
   film: '🎬',
   flag: '⚑',
@@ -46,28 +52,21 @@ const ICONS = {
   peace: '☮',
   pencil: '✎',
   pick: '⛏',
-  powerOn: '⏻',
-  powerOff: '⏼',
-  powerSleep: '⏾',
   radioactive: '☢',
   ray: '⚡',
   record: '⏺',
   recycle: '♻',
-  road: '⛗',
   tent: '⛺',
   triangle: '△',
-  truck: '⛟',
   scales: '⚖',
   search: '🔍',
-  shield: '⛨',
   skull: '☠',
   snowman: '⛄',
   speaker: '🔈',
   speakerDisable: '🔇',
   speakerSound: '🔉',
   stop: '⏹',
-  spinner: '🗘',
-  square: '☐',
+  spinner: '⚙',
   star: '★',
   storm: '🌧',
   sun: '☀',
@@ -79,16 +78,11 @@ const ICONS = {
   thunderstorm: '⛈',
   tornado: '🌪',
   trophy: '🏆',
+  umbrella: '☂',
   unlock: '🔓',
   videoGame: '🎮',
   warning: '⚠',
-  water: '🌢',
   wheelchair: '♿'
 };
-
-const Icon = ({ className, figure, size }) => (
-  <i class={ `mark-icon icon-${size} ${className}` }>
-    <span class={ className }>{ ICONS[figure] }</span></i>
-);
 
 export default Icon;

@@ -56,10 +56,9 @@ export default class CharEditorModal extends Component {
             data-dismiss="modal">Close</button>
           <button
             class="btn btn-primary"
-            disabled={ store.new.points !== 20 }
+            disabled={ store.loading === true || store.new.points !== 20 }
             onClick={ onSave }>
-            <Icon figure="spinner" />
-            { store.loading === true && ( <Icon figure="spinner" /> ) }
+            { store.loading === true && ( <Icon className="icon-spin" figure="spinner" /> ) }
             { store.new.id? 'Update': 'Save' }
           </button>
         </div>

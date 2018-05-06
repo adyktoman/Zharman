@@ -159,8 +159,11 @@ i
           width: 4.4rem;
 
       span
-        animation: spinner 2s linear infinite;
+        animation: spinner 1s linear infinite;
         vertical-align: middle;
 
 @keyframes spinner
-  to {transform: rotate(360deg);}
+  to {
+    opacity: 0.1;
+    transform: rotate(360deg);
+  }

@@ -29,8 +29,8 @@
               $db->users[$index]->email = $updatedUser->email;
             }
 
-            if (isset($updatedUser->level) ) {
-              $db->users[$index]->level = $updatedUser->level;
+            if (isset($updatedUser->nickname) ) {
+              $db->users[$index]->nickname = $updatedUser->nickname;
             }
 
             if (isset($updatedUser->password) ) {

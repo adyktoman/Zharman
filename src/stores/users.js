@@ -55,6 +55,7 @@ const UsersStore = model('UsersStore', {
         });
     },
     select(user) {
+      state.new.id = user.id;
       state.new.name = user.name;
       state.new.email = user.email;
       state.new.nickname = user.nickname;

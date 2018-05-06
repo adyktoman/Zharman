@@ -1,6 +1,25 @@
 {
-    "users": [],
+    "users": [
+        {
+            "email": "alonsomendez@gmail.com333",
+            "level": 0,
+            "name": "Alonso111",
+            "nickname": "Mendez",
+            "active": true,
+            "hash": "NDQ0NDQ=",
+            "id": 1
+        },
+        {
+            "email": "alonsomendez@gmail.com3",
+            "level": 0,
+            "name": "Alonso1",
+            "nickname": "Mendez2",
+            "active": true,
+            "hash": "MTIzNDU2",
+            "id": 2
+        }
+    ],
     "settings": {
-        "nextID": 1
+        "nextID": 3
     }
 }
