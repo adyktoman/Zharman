@@ -7,7 +7,7 @@ const CharsStore = model('CharsStore', {
   initial: () => ({
     list: [],
     new: {
-      name: 'Unnamed',
+      name: '',
       points: 20,
       race: 0, // 0: Archer, 1: Knight, 2: Mage
       stats: {
@@ -25,15 +25,15 @@ const CharsStore = model('CharsStore', {
       state.loading = true;
       axios
         .get(API_URI)
-        .then(res => {
-          state.list = res.data;
+        .then(response => {
+          state.list = response.data;
           state.loading = false;
           state.reset();
         })
     },
     reset() {
       state.new = {
-        name: 'Unnamed',
+        name: '',
         points: 20,
         race: 0,
         stats: {

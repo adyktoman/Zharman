@@ -36,6 +36,7 @@
     http_response_code(406);
     if (!isset($user->name) || !(isset($user->name[0]))) array_push($messages, 'Name is required!');
     if (!isset($user->nickname) || !(isset($user->nickname[0]))) array_push($messages, 'Nickname is required!');
+    if (!isset($user->level) || !(isset($user->level[0]))) array_push($messages, 'Level is required!');
     if (!isset($user->email) || !(isset($user->email[0]))) array_push($messages, 'Email is required!');
     if (!isset($user->password) || !(isset($user->password[0]))) array_push($messages, 'Password is required!');
   };

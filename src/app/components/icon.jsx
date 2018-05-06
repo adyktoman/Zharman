@@ -60,6 +60,7 @@ const ICONS = {
   triangle: '△',
   scales: '⚖',
   search: '🔍',
+  shield: '🛡',
   skull: '☠',
   snowman: '⛄',
   speaker: '🔈',

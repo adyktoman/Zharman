@@ -11,6 +11,7 @@ import UsersStore from '../../../stores/users.js';
 // Subcomponents
 import UserList from './users-list';
 import UserEditorModal from './user-editor-modal';
+import {Toaster} from '../../components/toast';
 
 const store = UsersStore();
 
@@ -19,14 +20,19 @@ export default class UserPage extends Component {
     e.preventDefault();
 
     if (store.new.id) {
-      store.update();
+      store.update(this.onSaveDone.bind(this));
     } else {
-      store.save();
+      store.save(this.onSaveDone.bind(this));
     }
+  }
 
-    store.reset();
-
-    $('#userEditorModal').modal('hide');
+  onSaveDone(response) {
+    if (response.status === 200 && response.data) {
+      Toaster.success('top', 'Successfully saved ' + store.new.name);
+      $('#userEditorModal').modal('hide');
+    } else {
+      Toaster.error('top', 'Error while saving ' + store.new.name);
+    }
   }
 
   componentDidMount() {
@@ -37,7 +43,10 @@ export default class UserPage extends Component {
     return (
       <Provider store={ store }>
         <section class="container-fluid">
-          <Header title="User Editor" description="Here you can add, remove and edit Users">
+          <Header
+            description="Here you can add, remove and edit Users"
+            icon="shield"
+            title="User Editor" >
             <button
               data-target="#userEditorModal"
               data-toggle="modal"

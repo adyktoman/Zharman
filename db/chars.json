@@ -38,32 +38,6 @@
                 "int": 2
             },
             "id": 3
-        },
-        {
-            "name": "Unnamed",
-            "points": 20,
-            "race": 0,
-            "stats": {
-                "hp": 4,
-                "sp": 4,
-                "str": 4,
-                "def": 4,
-                "int": 4
-            },
-            "id": 30
-        },
-        {
-            "name": "\u00ba12\u00ba12",
-            "points": 20,
-            "race": 0,
-            "stats": {
-                "hp": 4,
-                "sp": 4,
-                "str": 4,
-                "def": 4,
-                "int": 4
-            },
-            "id": 31
         }
     ],
     "settings": {

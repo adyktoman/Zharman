@@ -9,8 +9,9 @@ const UsersStore = model('UsersStore', {
     new: {
       email: '',
       level: 0,
-      name: 'Unnamed',
-      nickname: 'Unnamed'
+      name: '',
+      nickname: '',
+      password: ''
     }
   }),
   actions: state => ({
@@ -18,40 +19,57 @@ const UsersStore = model('UsersStore', {
       state.loading = true;
       axios
         .get(API_URI)
-        .then(res => {
-          state.list = res.data;
+        .then(response => {
+          state.list = response.data;
           state.loading = false;
         })
     },
-    save() {
+    save(callback) {
       state.loading = true;
       axios
         .post(API_URI, state.new)
-        .then(() => {
-          state.load()
+        .then((response) => {
+          state.load();
+          callback(response);
+        })
+        .catch( (response) => {
+          callback(response);
+          state.loading = false;
         });
     },
     reset() {
       state.new = {
         email: '',
         level: 0,
-        name: 'Unnamed'
+        name: '',
+        nickname: '',
+        password: ''
       }
     },
-    remove(user) {
+    remove(user, callback) {
       state.loading = true;
       axios
         .delete(API_URI + '/' + user.id)
-        .then(() => {
+        .then(response => {
           state.load();
+          callback(response);
+        })
+        .catch( (response) => {
+          callback(response);
+          state.loading = false;
         });
     },
-    update() {
+    update(callback) {
       state.loading = true;
       axios
         .put(API_URI + '/' + state.new.id, state.new)
-        .then(() => {
-          state.load()
+        .then((response) => {
+          state.load();
+          callback(response);
+        })
+        .catch( (response) => {
+          callback(response);
+          state.loading = false;
         });
     },
     select(user) {
@@ -59,6 +77,7 @@ const UsersStore = model('UsersStore', {
       state.new.name = user.name;
       state.new.email = user.email;
       state.new.nickname = user.nickname;
+      state.new.level = user.level;
     },
     setName (name) {
       state.new.name = name;
@@ -69,8 +88,8 @@ const UsersStore = model('UsersStore', {
     setEmail (email) {
       state.new.email = email;
     },
-    setGender (gender) {
-      state.new.gender = gender;
+    setLevel (level) {
+      state.new.level = level;
     },
     setPassword (password) {
       state.new.password = password;
