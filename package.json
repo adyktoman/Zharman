@@ -5,7 +5,7 @@
   "license": "MIT",
   "scripts": {
     "api": "php -S localhost:9002 api/index.php",
-    "start": "if-env NODE_ENV=production && npm run -s serve || npm run -s dev",
+    "start": "if-env NODE_ENV=production && npm run -s serve || npm run -s dev || npm run -s api",
     "build": "preact build",
     "serve": "preact build && preact serve",
     "dev": "preact watch",
