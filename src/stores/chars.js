@@ -28,6 +28,7 @@ const CharsStore = model('CharsStore', {
         .then(res => {
           state.list = res.data;
           state.loading = false;
+          state.reset();
         })
     },
     reset() {
@@ -44,28 +45,43 @@ const CharsStore = model('CharsStore', {
         }
       }
     },
-    remove(char) {
+    remove(char, callback) {
       state.loading = true;
       axios
         .delete(API_URI + '/' + char.id)
-        .then(() => {
+        .then(response => {
             state.load();
+            callback(response);
+        })
+        .catch( (response) => {
+          callback(response);
+          state.loading = false;
         });
     },
-    save() {
+    save(callback) {
       state.loading = true;
       axios
         .post(API_URI, state.new)
-        .then(() => {
-          state.load()
+        .then((response) => {
+          state.load();
+          callback(response);
+        })
+        .catch( (response) => {
+          callback(response);
+          state.loading = false;
         });
     },
-    update() {
+    update(callback) {
       state.loading = true;
       axios
         .put(API_URI + '/' + state.new.id, state.new)
-        .then(() => {
-          state.load()
+        .then((response) => {
+          state.load();
+          callback(response);
+        })
+        .catch( (response) => {
+          callback(response);
+          state.loading = false;
         });
     },
     select(char) {

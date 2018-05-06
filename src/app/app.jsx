@@ -2,6 +2,7 @@ import { Router } from 'preact-router';
 
 // general components
 import Menu from './components/menu';
+import Toast from './components/toast';
 
 // app settings
 import Config from 'json-loader!yaml-loader!../data/config.yml';
@@ -21,6 +22,7 @@ const App = () => (
       <CharsPage path="/chars" />
       <UsersPage path="/users" />
     </Router>
+    <Toast name="top" />
   </main>
 );
 
