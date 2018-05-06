@@ -1,6 +1,8 @@
 import { Component } from 'preact';
 import { connect } from 'parket/preact';
 
+// Shared components
+import { Toaster } from '../../components/toast';
 import Table from '../../components/table';
 
 const RACES = [ 'Archer', 'Knight', 'Mage' ];
@@ -9,7 +11,7 @@ const RACES = [ 'Archer', 'Knight', 'Mage' ];
 export default class CharsList extends Component {
   constructor(props) {
     super(props);
-    
+
     this.columns = [
       { label: 'Name', content: this.renderNameColumn.bind(this) },
       { label: 'HP', content: (char) => char.stats.hp },
@@ -21,11 +23,19 @@ export default class CharsList extends Component {
     ];
   }
 
+  onRemove(response) {
+    if (response.status === 200 && response.data) {
+      Toaster.success('top', 'Successfully removed ' + this.props.store.new.name);
+    } else {
+      Toaster.error('top', 'Error while removing ' + this.props.store.new.name);
+    }
+  }
+
   renderActionsColumn(char) {
     return (
       <button
         class="btn btn-outline-danger btn-sm badge"
-        onClick={ () => this.props.store.remove(char) }>&times;</button>
+        onClick={ () => this.props.store.remove(char, this.onRemove.bind(this)) }>&times;</button>
     )
   }
 
