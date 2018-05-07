@@ -1,16 +1,15 @@
 {
     "chars": [
         {
-            "name": "Magic Mike",
-            "points": 20,
-            "race": 2,
+            "name": "Updated",
+            "race": 0,
             "stats": {
-                "hp": 2,
-                "sp": 6,
-                "str": 2,
-                "def": 2,
-                "int": 8
-            },
+                "hp": 4,
+                "sp": 4,
+                "str": 4,
+                "def": 4,
+                "int": 4
+            }
             "id": 1
         },
         {
@@ -41,6 +40,6 @@
         }
     ],
     "settings": {
-        "nextID": 32
+        "nextID": 4
     }
 }

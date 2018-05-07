@@ -13,7 +13,7 @@
 
   $messages = [];
   $storage = getcwd().'/db';
-  sleep(1);
+  sleep(2);
 
   if(file_exists($controller)) {
     include($controller);
