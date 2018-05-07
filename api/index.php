@@ -17,7 +17,7 @@
   $storage = getcwd().'/db';
   sleep(2);
 
-  // Check if user has a valid JWT
+  // Check if this user has a valid JWT
 
   // C -   1 - create own records
   // R -   2 - read single or many owned records
@@ -28,7 +28,7 @@
   // M -  64 - modify any data
   // E - 128 - export own data
 
-  // TODO: Implement JWT, add "created_at", "created_by", "modified_at", "modified_by" for all routes, and logging
+  // TODO: Implement JWT authorization, add logging history to show users activity
 
   if(file_exists($controller)) {
     include($controller);
