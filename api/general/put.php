@@ -21,8 +21,8 @@
       foreach ($db->data as $index => $current) {
           if ($current->id === $entityID) {
             $found = true;
-
             $db->data[$index] = $updatedEntity;
+            $db->data[$index]->id = $entityID;
           }
       }
 
