@@ -15,6 +15,17 @@
   $storage = getcwd().'/db';
   sleep(2);
 
+  // Check if user has a valid JWT
+
+  // C -   1 - create own records
+  // R -   2 - read single or many owned records
+  // U -   4 - update single own record
+  // D -   8 - delete single own record
+  // T -  16 - truncate own data
+  // I -  32 - import own data
+  // M -  64 - modify any user data
+  // E - 128 - export own data
+
   if(file_exists($controller)) {
     include($controller);
   } elseif(strlen($entityDB) > 3 && file_exists($generalController)) {

@@ -1,0 +1,92 @@
+{
+  "roles": [
+    {
+      "id": 0,
+      "name": "visitor",
+      "description": "A simple website visitor",
+      "level": 0,
+      "active": true,
+      "access": []
+    },
+    {
+      "id": 2,
+      "name": "registered",
+      "description": "A registered visitor, unconfirmed email",
+      "level": 2,
+      "active": true,
+      "access": [
+        { "section": "dashboard", "permissions": "r" },
+        { "section": "help", "permissions": "r" },
+        { "section": "profile", "permissions": "ru" }
+      ]
+    },
+    {
+      "id": 11,
+      "name": "user",
+      "description": "A confirmed email user",
+      "level": 11,
+      "active": true,
+      "access": [
+        { "section": "battle", "permissions": "cru" },
+        { "section": "chars", "permissions": "crud" },
+        { "section": "dashboard", "permissions": "ru" },
+        { "section": "help", "permissions": "r" },
+        { "section": "profile", "permissions": "rud" }
+      ]
+    },
+    {
+      "id": 33,
+      "name": "editor",
+      "description": "A general editor",
+      "level": 33,
+      "active": true,
+      "access": [
+        { "section": "battle", "permissions": "crud" },
+        { "section": "chars", "permissions": "crudm" },
+        { "section": "dashboard", "permissions": "crud" },
+        { "section": "help", "permissions": "crudmie" },
+        { "section": "items", "permissions": "crudm" },
+        { "section": "maps", "permissions": "crudm" },
+        { "section": "mobs", "permissions": "crudm" },
+        { "section": "profile", "permissions": "rudm" }
+      ]
+    },
+    {
+      "id": 66,
+      "name": "admin",
+      "description": "A platform administrator",
+      "level": 66,
+      "active": true,
+      "access": [
+        { "section": "battle", "permissions": "crudmie" },
+        { "section": "chars", "permissions": "crudmie" },
+        { "section": "dashboard", "permissions": "crudmie" },
+        { "section": "items", "permissions": "crudmie" },
+        { "section": "help", "permissions": "crudmie" },
+        { "section": "maps", "permissions": "crudmie" },
+        { "section": "mobs", "permissions": "crudmie" },
+        { "section": "profile", "permissions": "rudmie" }
+      ]
+    },
+    {
+      "id": 99,
+      "name": "superadmin",
+      "description": "A super administrator",
+      "level": 99,
+      "active": true,
+      "access": [
+        { "section": "battle", "permissions": "crudtime" },
+        { "section": "chars", "permissions": "crudtime" },
+        { "section": "dashboard", "permissions": "crudtime" },
+        { "section": "items", "permissions": "crudtime" },
+        { "section": "help", "permissions": "crudtime" },
+        { "section": "maps", "permissions": "crudtime" },
+        { "section": "mobs", "permissions": "crudtime" },
+        { "section": "profile", "permissions": "crudtime" }
+      ]
+    }
+  ],
+  "settings": {
+    "nextID": 999
+  }
+}
