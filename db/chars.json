@@ -1,15 +1,15 @@
 {
     "chars": [
         {
-            "name": "Updated",
-            "race": 0,
+            "name": "Knight King",
+            "race": 2,
             "stats": {
-                "hp": 4,
-                "sp": 4,
-                "str": 4,
+                "hp": 5,
+                "sp": 2,
+                "str": 8,
                 "def": 4,
-                "int": 4
-            }
+                "int": 2
+            },
             "id": 1
         },
         {

@@ -17,7 +17,7 @@
 
   if(file_exists($controller)) {
     include($controller);
-  } elseif(file_exists($generalController)) {
+  } elseif(strlen($entityDB) > 3 && file_exists($generalController)) {
     $entityDB = "$storage/$uri[1].json";
 
     if(!file_exists($entityDB)) {

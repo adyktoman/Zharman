@@ -22,6 +22,7 @@
           if ($char->id === $charID) {
             $found = true;
             $db->chars[$index] = $updatedChar;
+            $db->chars[$index]->id = $charID;
           }
       }
 
