@@ -19,7 +19,7 @@
     }
 
     if ($found === false) {
-      $user->active = true;
+      $user->active = false;
       $user->hash = base64_encode($user->password);
       $user->id = $db->settings->nextID;
       $user->created_at = date('c');

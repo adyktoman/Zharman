@@ -6,7 +6,9 @@
       "description": "A simple website visitor",
       "level": 0,
       "active": true,
-      "access": []
+      "access": [],
+      "created_at": "2018-01-01T00:00:00+00:00",
+      "created_by": 0
     },
     {
       "id": 2,
@@ -18,7 +20,9 @@
         { "section": "dashboard", "permissions": "r" },
         { "section": "help", "permissions": "r" },
         { "section": "profile", "permissions": "ru" }
-      ]
+      ],
+      "created_at": "2018-01-01T00:00:00+00:00",
+      "created_by": 0
     },
     {
       "id": 11,
@@ -32,7 +36,9 @@
         { "section": "dashboard", "permissions": "ru" },
         { "section": "help", "permissions": "r" },
         { "section": "profile", "permissions": "rud" }
-      ]
+      ],
+      "created_at": "2018-01-01T00:00:00+00:00",
+      "created_by": 0
     },
     {
       "id": 33,
@@ -49,7 +55,9 @@
         { "section": "maps", "permissions": "crudm" },
         { "section": "mobs", "permissions": "crudm" },
         { "section": "profile", "permissions": "rudm" }
-      ]
+      ],
+      "created_at": "2018-01-01T00:00:00+00:00",
+      "created_by": 0
     },
     {
       "id": 66,
@@ -66,7 +74,9 @@
         { "section": "maps", "permissions": "crudmie" },
         { "section": "mobs", "permissions": "crudmie" },
         { "section": "profile", "permissions": "rudmie" }
-      ]
+      ],
+      "created_at": "2018-01-01T00:00:00+00:00",
+      "created_by": 0
     },
     {
       "id": 99,
@@ -83,7 +93,9 @@
         { "section": "maps", "permissions": "crudtime" },
         { "section": "mobs", "permissions": "crudtime" },
         { "section": "profile", "permissions": "crudtime" }
-      ]
+      ],
+      "created_at": "2018-01-01T00:00:00+00:00",
+      "created_by": 0
     }
   ],
   "settings": {
