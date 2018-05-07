@@ -18,6 +18,8 @@
 
     if ($found === false) {
       $char->id = $db->settings->nextID;
+      $char->created_at = date('c');
+      $char->created_by = 999;
       $db->settings->nextID = $db->settings->nextID + 1;
 
       array_push($db->chars, $char);
@@ -26,7 +28,7 @@
       echo json_encode($char);
     } else {
       http_response_code(409);
-      array_push($messages, 'Invalid char name: already exists!');
+      array_push($messages, 'Duplicated char name.');
     }
   } else {
     http_response_code(406);

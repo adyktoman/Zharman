@@ -37,9 +37,26 @@
               $db->users[$index]->nickname = $updatedUser->nickname;
             }
 
+            if (isset($updatedUser->active) ) {
+              $db->users[$index]->active = $updatedUser->active;
+            }
+
+            if (isset($updatedUser->status) ) {
+              $db->users[$index]->status = $updatedUser->status;
+            }
+
+            if (isset($updatedUser->picture) ) {
+              $db->users[$index]->picture = $updatedUser->picture;
+            }
+
             if (isset($updatedUser->password) && strlen($updatedUser->password) > 1) {
               $db->users[$index]->hash = base64_encode($updatedUser->password);
             }
+
+            $db->users[$index]->created_at = $user->created_at;
+            $db->users[$index]->created_by = $user->created_by;
+            $db->users[$index]->modified_at = date('c');
+            $db->users[$index]->modified_by = 999;
           }
       }
 

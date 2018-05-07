@@ -4,6 +4,8 @@
   header('Access-Control-Allow-Headers: Origin, Content-Type, Limit, Sort, Offset, Desc, Asc, Filter');
   header('Content-Type: application/json; charset=UTF-8');
 
+  date_default_timezone_set("UTC");
+
   global $messages, $uri, $storage;
 
   $uri = explode('/', $_SERVER['REQUEST_URI']);
@@ -23,8 +25,10 @@
   // D -   8 - delete single own record
   // T -  16 - truncate own data
   // I -  32 - import own data
-  // M -  64 - modify any user data
+  // M -  64 - modify any data
   // E - 128 - export own data
+
+  // TODO: Implement JWT, add "created_at", "created_by", "modified_at", "modified_by" for all routes, and logging
 
   if(file_exists($controller)) {
     include($controller);

@@ -10,9 +10,9 @@
     },
     {
       "id": 2,
-      "name": "registered",
+      "name": "unconfirmed",
       "description": "A registered visitor, unconfirmed email",
-      "level": 2,
+      "level": 1,
       "active": true,
       "access": [
         { "section": "dashboard", "permissions": "r" },

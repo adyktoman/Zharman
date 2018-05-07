@@ -23,6 +23,10 @@
             $found = true;
             $db->chars[$index] = $updatedChar;
             $db->chars[$index]->id = $charID;
+            $db->chars[$index]->created_at = $char->created_at;
+            $db->chars[$index]->created_by = $char->created_by;
+            $db->chars[$index]->modified_at = date('c');
+            $db->chars[$index]->modified_by = 999;
           }
       }
 

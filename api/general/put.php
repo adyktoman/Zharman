@@ -23,6 +23,10 @@
             $found = true;
             $db->data[$index] = $updatedEntity;
             $db->data[$index]->id = $entityID;
+            $db->data[$index]->created_at = $current->created_at;
+            $db->data[$index]->created_by = $current->created_by;
+            $db->data[$index]->modified_at = date('c');
+            $db->data[$index]->modified_by = 999;
           }
       }
 

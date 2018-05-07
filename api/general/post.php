@@ -16,6 +16,8 @@
 
     if ($found === false) {
       $entity->id = $db->settings->nextID;
+      $entity->created_at = date('c');
+      $entity->created_by = 999;
       $db->settings->nextID = $db->settings->nextID + 1;
 
       array_push($db->data, $entity);

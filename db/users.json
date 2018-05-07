@@ -1,16 +1,92 @@
 {
-    "users": [
-        {
-            "email": "admin@localhost",
-            "level": "99",
-            "name": "Administrator",
-            "nickname": "admin",
-            "active": true,
-            "hash": "MTIzNDU2",
-            "id": 1
-        }
-    ],
-    "settings": {
-        "nextID": 2
+  "users": [
+    {
+      "email": "system@localhost",
+      "level": 999,
+      "name": "System",
+      "nickname": "system",
+      "active": false,
+      "status": "Wo wooo wooooooo!!!",
+      "picture": "33.png",
+      "created_at": "2018-01-01T00:00:00+00:00",
+      "created_by": 0,
+      "id": 0
+    },
+    {
+      "email": "god@localhost",
+      "level": 99,
+      "name": "Super Administrator",
+      "nickname": "super",
+      "active": false,
+      "hash": "MTIzNDU2",
+      "status": "Working like nobody else...",
+      "picture": "24.png",
+      "created_at": "2018-01-01T00:00:00+00:00",
+      "created_by": 0,
+      "modified_by": 1,
+      "modified_at": "2018-01-01T00:00:00+00:00",
+      "id": 1
+    },
+    {
+      "email": "admin@localhost",
+      "level": 66,
+      "name": "Administrator",
+      "nickname": "admin",
+      "active": true,
+      "hash": "MTIzNDU2",
+      "status": "Here be light",
+      "picture": "22.png",
+      "created_at": "2018-01-01T01:00:00+00:00",
+      "created_by": 0,
+      "modified_by": 2,
+      "modified_at": "2018-01-01T01:00:00+00:00",
+      "id": 2
+    },
+    {
+      "email": "editor@localhost",
+      "level": 33,
+      "name": "Editor",
+      "nickname": "editor",
+      "active": true,
+      "hash": "MTIzNDU2",
+      "status": "Writing in the night",
+      "picture": "14.png",
+      "created_at": "2018-01-01T00:02:00+00:00",
+      "created_by": 0,
+      "modified_by": 3,
+      "modified_at": "2018-01-01T02:00:00+00:00",
+      "id": 3
+    },
+    {
+      "email": "user@localhost",
+      "level": 11,
+      "name": "User",
+      "nickname": "user",
+      "active": true,
+      "hash": "MTIzNDU2",
+      "status": "I like web surfing in the blue sky",
+      "picture": "2.png",
+      "created_at": "2018-01-01T00:03:00+00:00",
+      "created_by": 0,
+      "modified_by": 4,
+      "modified_at": "2018-01-01T00:03:00+00:00",
+      "id": 4
+    },
+    {
+      "email": "unconfirmed@localhost",
+      "level": 1,
+      "name": "Unconfirmed",
+      "nickname": "unconfirmed",
+      "active": true,
+      "hash": "MTIzNDU2",
+      "status": "Working like nobody else...",
+      "picture": "24.png",
+      "created_at": "2018-01-01T00:04:00+00:00",
+      "created_by": 0,
+      "id": 5
     }
+  ],
+  "settings": {
+    "nextID": 6
+  }
 }
