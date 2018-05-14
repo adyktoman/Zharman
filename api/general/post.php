@@ -1,34 +1,30 @@
 <?php
-  global $storage;
+  function main($api) {
+    if (!$api->isLoggedIn() || !$api->hasPermissions('w', $api->route)) {
+      $api->error('Unauthorized. Please login.', 401);
+      return;
+    }
 
-  $inputJSON = file_get_contents('php://input');
-  $entity = json_decode( $inputJSON );
+    $entity = $api->getPayload();
 
-  if (isset($entity->name) && isset($entity->name[0])) {
-    $db = json_decode( file_get_contents( "$storage/$uri[1].json" ) );
+    if (!isset($entity->name) || !(isset($entity->name[0]))) {
+      $api->error('Name is required', 406);
+      return;
+    }
 
-    $found = false;
+    $db = $api->getDB();
+    $found = FALSE;
+
     foreach ($db->data as $index => $current) {
       if ($current->name === $entity->name) {
-        $found = true;
+        $found = TRUE;
       }
     }
 
-    if ($found === false) {
-      $entity->id = $db->settings->nextID;
-      $entity->created_at = date('c');
-      $entity->created_by = 999;
-      $db->settings->nextID = $db->settings->nextID + 1;
-
-      array_push($db->data, $entity);
-
-      file_put_contents("$storage/$uri[1].json", json_encode($db, JSON_PRETTY_PRINT));
-      echo json_encode($entity);
-    } else {
-      http_response_code(409);
-      array_push($messages, 'Invalid entity name: already exists!');
+    if ($found) {
+      return $api->error('Invalid entity name: already exists!', 409);
     }
-  } else {
-    http_response_code(406);
-    if (!isset($entity->name) || !(isset($entity->name[0]))) array_push($messages, 'Name is required!');
-  };
+
+    $api->save($db, $entity);
+    $api->send($entity);
+  }

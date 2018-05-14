@@ -7,15 +7,6 @@ insert_final_newline = true
 indent_size = 2
 indent_style = space
 
-[*.{pug,styl,js,jsx}]
-indent_size = 2
-
-[*.{md,yaml}]
-indent_style = tab
-indent_style = space
-indent_size = 2
-
 [*.{json}]
-indent_style = tab
 indent_style = space
 indent_size = 4
